@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Document is an article for a4 paper
+\documentclass[a4paper]{article}
+%% Encoding is utf8
+\usepackage[utf8]{inputenc}
+%% Fonts
+\usepackage[T1]{fontenc}
+%% Include graphic.
+\usepackage{graphicx}
+%% Use PGF to draw.
+\usepackage{tikz}
+%% Use tabularx
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+%% Babel package
+\usepackage[english]{babel}
+%% Bit fields: to create message descriptions
+\usepackage[bitheight=6ex]{bytefield}
+%% Use hyper reference.
+\usepackage[bookmarksopen=true]{hyperref}
+\hypersetup{%
+pdftitle={Configuration Library},
+pdfauthor={Anthony Jaguenaud},
+pdfsubject={Configuration library},
+pdfkeywords={}}
+%% Setup links.
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.3,0}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkbrown}{rgb}{0.28,0.07,0.07}
+
+\hypersetup{%
+  colorlinks=true,
+  citecolor=darkblue,
+  urlcolor=darkgreen,
+  linkcolor=darkred,
+  menucolor=darkbrown}
+
+\begin{document}
+
+ \tableofcontents
+ \section{Goals}
+ \begin{abstract}
+   Goal of this software, is to create a “config” class in a generated library.
+ \end{abstract}
+
+  When developer need to store how its application or library does work, he needs some configuration files.
+ There is lots of format for configuration files : \emph{ini}, \emph{xml}, \emph{Windows register} \dots
+
+ Lots of time, the configuration is delegated to software by library. For example, I have a library for encode movies. My library needs lots of information, like : encoding format,
+ frame rate \dots
+ But, two applications can use my library. If configuration is delegate to library, all the two applications will inherit of same configuration. So applications make configuration.
+ The problem in this case, is that applications need to redevelop a configuration parsing with work duplicated, and possibility of mistakes.
+
+ Lots of configuration files have diferents format and no one application to edit them.
+
+ Configuration files have parsed with parsing libraries, so you have to create a better API to use your configuration. Some times an administrator can authorized users to have their own
+ config, or only some fields.
+
+ This project goal is to create a software that with an input file describing configuration, is going to generate a C++ class for read configuration, generate an API documentation of this
+ class.
+ An other goal, is to generate a Qt application that can create configuration of every compiled class.
+
+ \section{Inputs and Outputs}
+ \begin{abstract}
+   This is global conception part.
+ \end{abstract}
+
+ \subsection{Inputs}
+ \subsection{Outputs}
+ \section{Generator}
+ \section{API generated}
+\end{document}
